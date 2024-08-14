@@ -7,6 +7,11 @@
     <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
     <link rel="stylesheet" type="text/css" href="{% static 'css/somos.css' %}">
     <title>Quienes somos - Paso Seguro</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body>
     <nav class="navbar">
@@ -25,7 +30,7 @@
             </a>
         </div>
     </nav>
-    <section class="hero-section">
+    <section class="hero-section" data-aos="fade-up" data-aos-duration="2000">
         <div class="arriba">
             <img src="{% static 'img/rutaa.png' %}" alt="Imagen de fondo" class="img-arriba">
         </div>
@@ -34,13 +39,13 @@
         </div>
     </section>
 
-    <section class="info-text">
+    <section class="info-text" data-aos="zoom-in"data-aos-duration="2000">
         <p>Paso Seguro es la concesionaria de la Red de Accesos a Córdoba (RAC). La RAC está integrada por 10 rutas: Ruta Nacional 20/38, Ruta Provincial 5, Ruta Nacional 36, Ruta Nacional 9 Sur, Autopista Pilar Córdoba, Ruta Nacional 19, Ruta  Nacional 9 Norte, Segundo Anillo de Circunvalación, Ruta Provincial E-53 y Ruta Provincial E-55, más la Avenida de Circunvalación de la ciudad de Córdoba.</p>
     
         <p>Paso Seguro realiza diariamente los trabajos de rehabilitación y mantenimiento de los diez corredores; el patrullaje de las rutas a través de los móviles y personal del Área de Seguridad Vial y el servicio de asistencia a los usuarios a través de grúas y ambulancias, en casos de accidentes.</p>
     </section>
     
-    <section class="section-container">
+    <section class="section-container" data-aos="zoom-in"data-aos-duration="2000">
         <div class="section-content">
             <h2 class="section-title">VALORES</h2>
             <p class="section-text">
@@ -52,7 +57,7 @@
         </div>
     </section>
 
-    <section class="section-left-container">
+    <section class="section-left-container" data-aos="zoom-in"data-aos-duration="2000">
         <div class="section-left-content">
             <h2 class="section-left-title">Política de Calidad</h2>
             <p class="section-left-text">
@@ -120,5 +125,11 @@
             <small>&copy; 2024 Paso Seguro. Todos los derechos reservados.</small>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
