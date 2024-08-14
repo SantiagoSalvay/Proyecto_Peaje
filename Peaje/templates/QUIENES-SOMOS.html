@@ -81,5 +81,44 @@
             <img src="{% static 'img/ft2.png' %}" alt="Descripción de la imagen 2" class="section-left-image">
         </div>
     </section>
+    <div class="separator" ></div>
+    
+    <footer class="pie-pagina" >
+        <div class="container">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro" class="logo">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li><a href="mailto:info@pasoseguro.com">info@pasoseguro.com</a></li>
+                    <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                    <li>ITS VILLADA, Cordoba, Argentina</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                    <li><a href="{% url 'peaje_dinamico' %}">Peaje Dinámico</a></li>
+                    <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+                    <a href="#"><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+                    <a href="#"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 Paso Seguro. Todos los derechos reservados.</small>
+        </div>
+    </footer>
 </body>
 </html>
