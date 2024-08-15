@@ -206,15 +206,15 @@ body {
 .accordion h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--primary-color); /* Línea amarilla */
+    border-bottom: 3px solid var(--primary-color); 
     display: inline-block;
     padding-bottom: 5px;
     color: var(--text-color);
 }
 
 .accordion-item {
-    margin-bottom: 10px; /* Agrega espacio entre cada elemento del acordeón */
-    border: none; /* Elimina el borde inferior entre elementos */
+    margin-bottom: 10px; 
+    border: none; 
 }
 .accordion-icon {
     position: absolute;
@@ -235,7 +235,7 @@ body {
 }
 
 .accordion-button.active .accordion-arrow {
-    transform: rotate(90deg); /* Rotar la flecha hacia abajo */
+    transform: rotate(90deg); 
 }
 
 .accordion-button {
@@ -249,7 +249,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     color: var(--text-color);
-    border-radius: 4px; /* Añade un poco de redondeo a las esquinas */
+    border-radius: 4px;
 }
 
 .accordion-button:focus {
@@ -261,7 +261,7 @@ body {
 }
 
 .accordion-button.active {
-    background-color: var(--primary-color); /* Cambia de color cuando está activo */
+    background-color: var(--primary-color); 
 }
 
 .accordion-content {
@@ -275,6 +275,96 @@ body {
 
 .accordion-content p {
     margin: 15px 0;
-    padding: 0 10px; /* Espaciado interno para el contenido */
+    padding: 0 10px; 
     color: var(--text-color);
 }
+
+/* General Container */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cinco columnas */
+    grid-template-rows: repeat(2, auto); /* Dos filas */
+    gap: 20px;
+    max-width: 1200px;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    margin-left: 390px;
+  }
+  
+  /* Individual Item */
+  .item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Route Title */
+  .item p:first-child {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Progress Circle Container */
+  .progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+  }
+  
+  /* SVG Circular Progress */
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+  
+  .progress-ring__circle {
+    transition: stroke-dashoffset 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
+  /* Percentage Text Inside Circle */
+  .percentage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  /* Status Text */
+  .item p:last-child {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .circular-progress {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#4d5bf9 0%, #cadcff 0%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circular-progress .value-container {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4d5bf9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
