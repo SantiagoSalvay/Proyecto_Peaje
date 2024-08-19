@@ -3,8 +3,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def peaje_dinamico(request):
-    return render(request, 'PEAJE-DINAMICO.html')
+def telepase(request):
+    return render(request, 'telepase.html')
 
 def quienes_somos(request):
     return render(request, 'QUIENES-SOMOS.html')
