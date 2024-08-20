@@ -24,4 +24,10 @@ def registro(request):
 def recuperar_contrasena(request):
     return render(request, 'RECUCONTRA.html')
 
+def foro(request):
+    return render(request, 'Foro.html')
+
+def obras(request):
+    return render(request, 'Obras.html')
+
 

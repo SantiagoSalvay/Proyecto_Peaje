@@ -10,4 +10,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('registro/', views.registro, name='registro'),
     path('recuperar-contrasena/', views.recuperar_contrasena, name='recuperar_contrasena'),
+    path('obras/', views.obras, name='obras'),
+    path('foro/', views.foro, name='foro')
 ]
