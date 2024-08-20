@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/Corousel.js' %}"></script>
+    <script src="{% static 'js/map1.js' %}"></script>
+    <script src="{% static 'js/map2.js' %}"></script>
+    <title>Inicio - Paso Seguro</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+</head>
+<body>
+    <body>
+        <section class="navbar-section" >
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <a href="{% url 'index' %}" class="logo">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro">
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                        <li><a href="{% url 'servicios' %}">Servicio</a></li>
+                        <li><a href="{% url 'telepase' %}">Telepase</a></li>
+                        <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                    </ul>
+                    <a href="{% url 'login' %}" class="user-icon">
+                        <img src="{% static 'img/user.png' %}" alt="Icono de Usuario">
+                    </a>
+                </div>
+            </nav>
+        </section>
+    
+        <section class="carousel-section" data-aos="fade-up" data-aos-duration="2000">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="{% static 'img/peaje1.png' %}" alt="Imagen 1" class="carousel-image active">
+                    <img src="{% static 'img/peaje2.png' %}" alt="Imagen 2" class="carousel-image">
+                </div>
+                <div class="progress-bar"></div>
+            </div>
+    
+    </section>
+        </section>
+    
+        <section class="map-section" data-aos="zoom-in"data-aos-duration="2000">
+            <div class="map-title">NUESTROS PEAJES</div>
+    
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </section>
+    
+        <section class="map-section1" data-aos="zoom-in"data-aos-duration="2000">
+            <div class="map-sucursal-container">
+                <div id="map-sucursal"></div>
+            </div>
+            <div class="map-sucursal-title">NUESTRAS SUCURSALES</div>
+        </section>
+    
+        <section class="content" data-aos="fade-right">
+            <div class="section-container">
+                <div class="button-container">
+                    <a href="{% url 'servicios' %}" class="button">
+                        <img src="{% static 'img/ruta.png' %}" alt="Rutas" class="button-image">
+                        <span class="button-text">RUTAS</span>
+                        <span class="button-view">VER</span>
+                    </a>
+                </div>
+                <div class="button-container">
+                    <a href="{% url 'obras' %}" class="button">
+                        <img src="{% static 'img/puente.png' %}" alt="Obras" class="button-image">
+                        <span class="button-text">OBRAS</span>
+                        <span class="button-view">VER</span>
+                    </a>
+                </div>
+                <div class="button-container">
+                    <a href="{% url 'foro' %}" class="button">
+                        <img src="{% static 'img/ruta2.png' %}" alt="Noticias" class="button-image">
+                        <span class="button-text">FORO</span>
+                        <span class="button-view">VER</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="separator" ></div>
+        <div></div>
+        <footer class="pie-pagina" >
+            <div class="container">
+                <div class="footer-section">
+                    <div class="logo-container">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro" class="logo">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <ul>
+                        <li><a href="mailto:info@pasoseguro.com">info@pasoseguro.com</a></li>
+                        <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                        <li>ITS VILLADA, Cordoba, Argentina</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                        <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                        <li><a href="{% url 'telepase' %}">Peaje Dinámico</a></li>
+                        <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+                        <a href="#"><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+                        <a href="#"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2024 Paso Seguro. Todos los derechos reservados.</small>
+            </div>
+        </footer>
+    
+    
+
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{% static 'js/map1.js' %}"></script>
+    <script src="{% static 'js/map2.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

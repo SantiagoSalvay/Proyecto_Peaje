@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/service.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+    <script src="{% static 'js/acordion1.js' %}"></script>
+    <script src="{% static 'js/routeStatus.js' %}"></script>
+    <title>Servicios - Paso Seguro</title>
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro">
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                <li><a href="{% url 'servicios' %}">Servicio</a></li>
+                <li><a href="{% url 'telepase' %}">Peaje Dinámico</a></li>
+                <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+            </ul>
+            <a href="{% url 'login' %}" class="user-icon">
+                <img src="{% static 'img/user.png' %}" alt="Icono de Usuario">
+            </a>
+        </div>
+    </nav>
+    <section class="hero-section" data-aos="fade-up" data-aos-duration="2000">
+        <div class="arriba">
+            <img src="{% static 'img/rutaa.png' %}" alt="Imagen de fondo" class="img-arriba">
+        </div>
+        <div class="title-abajo">
+            <h1 class="titulo-abajo">SERVICIOS</h1>
+        </div>
+    </section>
+    <div class="content" data-aos="fade-up" data-aos-duration="2000">
+        <div class="accordion">
+            <h2>ATENCIÓN LAS 24 HORAS</h2>
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-icon">+</span>
+                    <strong>Primero Auxilios</strong>
+                    <span class="accordion-arrow">→</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Paso Seguro cuenta con un servicio de emergencias médicas las 24 hs. de los 356 días del año. Con ambulancias de última generación equipadas con instrumental médico de alta complejidad y personal médico. Además, contamos con un vehículo totalmente equipado para el rescate de personas ante siniestros vehiculares.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-icon">+</span>
+                    <strong>Postes S.O.S.</strong>
+                    <span class="accordion-arrow">→</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Paso Seguro tiene implementado un sistema de postes parlantes, para permitir que un usuario pueda establecer una comunicación con un Operador de la Base de Operaciones. Estos postes están ubicados a ambos lados de las rutas que componen la R.A.C.</p>
+
+                    <p>Para la puesta en funcionamiento del poste S.O.S, el usuario oprime un pulsado y escucha un tono de espera, o bien una cadencia rápida de ocupado. El poste envía la demanda de servicio a la Base de Operaciones, junto con su identidad (ubicación) quedando a la espera de contestación. A continuación se establecerá la comunicación personalizada con el usuario. Esta comunicación es terminada por el Operador o bien, al cabo de un tiempo predeterminado por el propio sistema, pudiendo ser reanudada mediante una nueva llamada en caso de que el tiempo no le fuera suficiente al usuario.</p>
+
+                    <p>Los motivos de las llamadas a realizar por los usuarios, pueden ser:</p>
+
+                    <p>-Solicitud de auxilio mecánico</p>
+                    <p>-Solicitud de atención médica (por accidente u otras causas)</p>
+                    <p>-Solicitud de ayuda por diversas causas</p>
+                    <p>-Solicitud de información</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">
+                    <span class="accordion-icon">+</span>
+                    <strong>En qué consiste el servicio de remolque</strong>
+                    <span class="accordion-arrow">→</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Paso Seguro cuenta con un “servicio de despeje de ruta” que consiste en llevar el vehículo hasta un lugar seguro más cercano desde el punto de vista de seguridad vial y que cuente con teléfono.</p>
+                </div>
+            </div>
+            <script src="{% static 'js/acordion1.js' %}"></script>
+        </div>  
+        <script src="{% static 'js/acordion1.js' %}"></script>
+    </div>
+
+    <div class="foto-cn" data-aos="fade-up" data-aos-duration="2000">
+        <img src="{% static 'img/peaje1.png' %}" alt="Foto de CN">
+        <div class="contenedor" data-aos="fade-up" data-aos-duration="2000">
+            <div class="item">
+                <p>RUTA 20/38 AUTOPISTA CÓRDOBA - CARLOS PAZ</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>
+
+            <div class="item">
+                <p>RUTA 5 AUTOVIA CORDOBA - ALTA GRACIA</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>   
+            
+            <div class="item">
+                <p>RUTA 36 CORDOBA - RIO CUARTO</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>
+
+            <div class="item">
+                <p>RUTA 9 SUR CORDOBA - RIO SEGUNDO - PILAR</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div> 
+
+            <div class="item">
+                <p>AUTOPISTA CORDOBA - PILAR</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>
+
+            <div class="item">
+                <p>RUTA 19 CORDOBA - RIO PRIMERO</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div> 
+
+            <div class="item">
+                <p>RUTA 9 NORTE CORDOBA - JESUS MARIA</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>
+
+            <div class="item">
+                <p>RUTA E-53 CORDOBA - RIO CEBALLOS</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div> 
+
+            <div class="item">
+                <p>RUTA E-55 CORDOBA - LA CALERA - BIALET MASSE</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div>
+
+            <div class="item">
+                <p>AVENIDA CIRCUNVALACIÓN</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="100" height="100">
+                        <circle class="progress-ring__circle" stroke="#28a745" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
+                    </svg>
+                    <div class="percentage">100%</div> 
+                </div>
+                <p>TRANSITO NORMAL</p>
+            </div> 
+            <script src="{% static 'js/service.js' %}"></script>
+        </div>  
+    </div>  
+    <div class="separator" ></div>
+        <div></div>
+        <footer class="pie-pagina" >
+            <div class="container">
+                <div class="footer-section">
+                    <div class="logo-container">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro" class="logo">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <ul>
+                        <li><a href="mailto:info@pasoseguro.com">info@pasoseguro.com</a></li>
+                        <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                        <li>ITS VILLADA, Cordoba, Argentina</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                        <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                        <li><a href="{% url 'telepase' %}">Peaje Dinámico</a></li>
+                        <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+                        <a href="#"><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+                        <a href="#"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2024 Paso Seguro. Todos los derechos reservados.</small>
+            </div>
+        </footer>
+
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{% static 'js/map1.js' %}"></script>
+    <script src="{% static 'js/map2.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

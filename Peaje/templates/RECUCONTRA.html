@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/recuperar.css' %}">
+    <style></style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style></style>
+    <title>Recuperar Contraseña - Peaje Seguro</title>
+</head>
+<body>
+    <section class="navbar-section" >
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="{% url 'index' %}" class="logo">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicio</a></li>
+                    <li><a href="{% url 'telepase' %}">Peaje Dinámico</a></li>
+                    <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                </ul>
+                <a href="{% url 'login' %}" class="user-icon">
+                    <img src="{% static 'img/user.png' %}" alt="Icono de Usuario">
+                </a>
+            </div>
+        </nav>
+    </section>
+
+    <section class="recovery-container">
+        <div class="recovery-title">
+            <h1>RECUPERAR </h1>
+            <h1>CUENTA</h1>
+        </div>
+        <div class="recovery-form-container">
+            <div class="info-box">
+                <p>Para recuperar tu contraseña necesitamos <strong>verificar tu identidad.</strong></p>
+                <p>Ingresá el <strong>número de DNI/CUIT</strong> con el que te registraste y el <strong>dominio/patente</strong> de un vehículo que hayas registrado (no importa si fue dado de baja).</p>
+            </div>
+            <form>
+                <h2>VERIFICÁ TU IDENTIDAD</h2>
+                <div class="form-group">
+                    <label for="dni-cuit">Número de DNI/CUIT</label>
+                    <input type="text" id="dni-cuit" name="dni-cuit" required>
+                    <label for="dominio">Dominio</label>
+                    <input type="text" id="dominio" name="dominio" required>
+                </div>
+                <h2>DATOS DE RECUPERACIÓN</h2>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="email-confirm">Correo electrónico (confirmar)</label>
+                    <input type="email" id="email-confirm" name="email-confirm" required>
+                </div>
+                <button type="submit">Recuperar Contraseña</button>
+            </form>
+        </div>
+    </section>
+    <div class="separator" ></div>
+    <div></div>
+    <footer class="pie-pagina" >
+        <div class="container">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo Paso Seguro" class="logo">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li><a href="mailto:info@pasoseguro.com">info@pasoseguro.com</a></li>
+                    <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                    <li>ITS VILLADA, Cordoba, Argentina</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                    <li><a href="{% url 'telepase' %}">Peaje Dinámico</a></li>
+                    <li><a href="{% url 'atencion_al_cliente' %}">Atención al Usuario</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+                    <a href="#"><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+                    <a href="#"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 Paso Seguro. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+</body>
+</html>
