@@ -30,4 +30,8 @@ def foro(request):
 def obras(request):
     return render(request, 'Obras.html')
 
+def obras_ejecucion(request):
+    return render(request, 'obras_e.html')
 
+def obras_ejecutadas(request):
+    return render(request, 'obras_ec.html')

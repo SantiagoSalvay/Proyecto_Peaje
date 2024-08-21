@@ -139,6 +139,10 @@ body {
 .user-icon img:hover {
     transform: scale(1.1);
 }
+.content {
+    margin-top: 130px;
+}
+
 .hero-section{
     position: relative;
     text-align: left; 
@@ -181,3 +185,4 @@ body {
         3px  3px 0 #007BFF; 
     
 }
+

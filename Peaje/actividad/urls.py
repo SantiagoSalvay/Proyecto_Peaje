@@ -11,5 +11,8 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('recuperar-contrasena/', views.recuperar_contrasena, name='recuperar_contrasena'),
     path('obras/', views.obras, name='obras'),
-    path('foro/', views.foro, name='foro')
+    path('foro/', views.foro, name='foro'),
+    path('obras/obras-ejecutadas', views.obras_ejecutadas, name='obras1'),
+    path('obras/obras-en-ejecucion', views.obras_ejecucion, name='obras2')
+
 ]
