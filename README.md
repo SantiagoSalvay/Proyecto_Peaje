@@ -12,7 +12,7 @@ Este proyecto es una solución para la gestión y control de peajes. Proporciona
 ## Requisitos
 
 - **Python 3.8.10**
-- **Django 5.1**
+- **Django 4.2.14**
 - **MySQL**
 
 
