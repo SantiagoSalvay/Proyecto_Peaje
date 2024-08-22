@@ -35,7 +35,9 @@ erDiagram
         int id_pasada PK
         int id_tipo_vehiculo FK
         datetime fecha_hora_de_pasada
-        string tipo_paso
+        string pasada_telepase FK
+        string  pasada_efectivo FK
+        string pasada_no_paga FK
     }
 
     TIPO_VEHICULO {
@@ -54,7 +56,6 @@ erDiagram
 
     REGISTRO_EFECTIVO {
         int id_registro PK
-        int id_tipo_vehiculo FK
         datetime fecha_hora_de_emision
         float importe_cobrado
         string codigo_QR
@@ -63,7 +64,6 @@ erDiagram
 
     REGISTRO_TELEPASE {
         int id_registro PK
-        int id_tipo_vehiculo FK
         datetime fecha_hora_de_emision
         float importe_cobrado
         string codigo_telepase
@@ -75,7 +75,6 @@ erDiagram
 
     NO_PAGADOS {
         int id_no_pagado PK
-        int id_tipo_vehiculo FK
         string nombre_conductor
         string apellido_conductor
         string dni_conductor
@@ -91,5 +90,5 @@ PASADA }| --|| REGISTRO_TELEPASE : "puede ser"
 PASADA }| --|| NO_PAGADOS : "puede ser"
 REGISTRO_EFECTIVO }| --|| HISTORIAL_TARIFAS : "usa"
 REGISTRO_TELEPASE }| --|| HISTORIAL_TARIFAS : "usa"
-TIPO_VEHICULO || -- |{ PASADA :"puede hacer muchas"
+HISTORIAL_TARIFAS || -- |{ TIPO_VEHICULO :"puede tener"
 HISTORIAL_TARIFAS || --|{ NO_PAGADOS :"usa"
