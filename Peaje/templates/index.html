@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido</title>
+    <title>Iniciar Sesion</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
 </head>
 <body>
-    <h1>Hola</h1>
+    <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center bg-custom">
+        <div class="text-center mb-4">
+            <h1 class="fw-bold display-4">PASO SEGURO</h1> 
+            <h4 class="mb-4">GESTIÓN DE PASADAS</h4> 
+        </div>
+        <div class="w-50">
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                </div>
+                <div class="mb-3">
+                    <label for="documento" class="form-label">Documento</label>
+                    <select class="form-select" id="documento" required>
+                        <option value="" selected>Seleccionar</option>
+                        <option value="DNI">DNI</option>
+                        <option value="PASAPORTE">PASAPORTE</option>
+                    </select>
+                </div>
+                <div class="mb-3" id="extraInputContainer" style="display: none;">
+                    <label id="extraLabel" class="form-label"></label>
+                    <input type="text" class="form-control" id="extraInput" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

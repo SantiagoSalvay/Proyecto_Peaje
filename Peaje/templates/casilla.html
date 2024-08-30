@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso Seguro - Gestión de Pasadas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/casilla.css' %}">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="titulo">PASO SEGURO</h1>
+        <p class="subtitulo">GESTIÓN DE PASADAS</p>
+        <div class="mt-4">
+            <h4>Seleccione su casilla:</h4>
+            <div class="d-flex flex-wrap justify-content-center mt-3">
+                <!-- Primera fila de botones -->
+                <div class="w-100 d-flex justify-content-center mb-2">
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">1</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">2</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">3</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">4</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">5</span></button>
+                </div>
+                <!-- Segunda fila de botones -->
+                <div class="w-100 d-flex justify-content-center">
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">6</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">7</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">8</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">9</span></button>
+                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">10</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/casilla.js' %}"></script>
+</body>
+</html>

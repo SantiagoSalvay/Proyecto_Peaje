@@ -1,0 +1,37 @@
+body {
+    background-color: #e0d9d9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 3rem;
+    font-style: italic;
+    color: #333;
+}
+
+.h4 {
+    padding-right: 100px;
+}
+
+.mt-4 {
+    padding-top: 180px;
+}
+
+.casilla {
+    width: 150px; /* Cambiado de 100px */
+    height: 70px; /* Cambiado de 50px */
+    font-size: 1.5rem; /* Añadido para agrandar el texto */
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+.casilla:hover {
+    transform: scale(1.05);
+    background-color: #e5e5e5;
+}

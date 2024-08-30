@@ -1,0 +1,30 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.bg-custom {
+    background-color: #DCD4D4; /* Color de fondo */
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #333;
+}
+
+.form-label {
+    font-size: 1rem;
+}
+
+input.form-control, select.form-select {
+    width: 100%;
+}
+
+#extraInputContainer {
+    margin-top: 10px;
+}
