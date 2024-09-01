@@ -3,28 +3,54 @@ body {
 }
 
 .bg-custom {
-    background-color: #DCD4D4; /* Color de fondo */
+    background-color: #DCD4D4;
 }
 
-h1 {
-    font-size: 5rem;
+.titulo {
+    font-size: 4.5rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-h4 {
-    font-size: 3rem;
+.subtitulo {
+    font-size: 2.5rem;
     font-style: italic;
     color: #333;
+    margin-bottom: 2.5rem;
 }
 
-.form-label {
-    font-size: 1rem;
-}
-
-input.form-control, select.form-select {
+.login-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 500px; /* Aumentado el tamaño del cuadro de login */
     width: 100%;
 }
 
-#extraInputContainer {
-    margin-top: 10px;
+.form-control, .form-select {
+    border: 2px solid #ccc;
+    padding: 1rem; /* Aumentado el padding de los campos de entrada */
+    border-radius: 5px;
+    font-size: 1.1rem; /* Aumentado el tamaño del texto */
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2cdf53;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-primary {
+    background-color: #48d448;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 0.9rem 1.2rem; /* Aumentado el tamaño del botón */
+}
+
+.btn-primary:hover {
+    background-color: #149108;
+}
+
+.btn-lg {
+    padding: 1rem 1.5rem; /* Aumentado el padding del botón */
 }

@@ -1,9 +1,15 @@
+// js/casilla.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionar todos los botones con la clase "casilla"
     const casillas = document.querySelectorAll('.casilla');
 
-    // Asignar números del 1 al 10 a cada casilla
     casillas.forEach((casilla, index) => {
-        casilla.querySelector('.numero').textContent = index + 1; // Números del 1 al 10
+        casilla.querySelector('.numero').textContent = index + 1;
+
+        // Agregar evento de clic para redirigir a la página de detalle de casilla
+        casilla.addEventListener('click', function() {
+            const numeroCasilla = index + 1;
+            // Redirigir a la nueva página con el número de casilla en la URL
+            window.location.href = `${comienzaTurnoUrl}?casilla=${numeroCasilla}`;
+        });
     });
 });

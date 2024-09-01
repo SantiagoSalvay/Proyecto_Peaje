@@ -22,14 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     loginForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el comportamiento de envío por defecto del formulario
+        event.preventDefault(); 
 
-        // Verificar si todos los campos están completos
         if (!documentoSelect.value || !extraInput.value || !document.getElementById('nombre').value || !document.getElementById('apellido').value) {
             alert('Por favor, complete todos los campos antes de iniciar sesión.');
         } else {
-            // Redirigir usando la URL de Django
-            window.location.href = '/casilla/'; // Usa la ruta configurada en urls.py
+            
+            window.location.href = '/casilla/'; 
         }
     });
 });

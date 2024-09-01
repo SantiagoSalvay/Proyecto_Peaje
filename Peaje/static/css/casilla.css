@@ -14,18 +14,34 @@ body {
     color: #333;
 }
 
-.h4 {
-    padding-right: 100px;
+.bienvenida {
+    font-size: 2rem; 
+    color: #333;
+    margin-top: 10px; 
+}
+
+.selector-casilla h4 {
+    padding-left: 20px; 
+    margin-top: 20px; 
+}
+
+
+.casillas-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px; 
+    width: 100%;
 }
 
 .mt-4 {
-    padding-top: 180px;
+    padding-top: 50px;
 }
 
 .casilla {
-    width: 150px; /* Cambiado de 100px */
-    height: 70px; /* Cambiado de 50px */
-    font-size: 1.5rem; /* Añadido para agrandar el texto */
+    width: 160px; 
+    height: 80px; 
+    font-size: 1.7rem; 
     border-radius: 8px;
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     font-weight: bold;
@@ -34,4 +50,17 @@ body {
 .casilla:hover {
     transform: scale(1.05);
     background-color: #e5e5e5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+}
+
+.w-100 {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 10px; 
 }
