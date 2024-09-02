@@ -1,0 +1,43 @@
+body {
+    background-color: #e0d7d7;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.titulo {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 3rem;
+    font-style: italic;
+    color: #333;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 1.2rem; 
+}
+
+.form-control {
+    font-size: 1.1rem; 
+    padding: 4px; 
+}
+
+.btn-volver, .btn-confirmar {
+    padding: 10px 20px; 
+    font-size: 1.2rem; 
+}
+
+.btn-confirmar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-volver {
+    background-color: #f0f0f0;
+    color: #000;
+}

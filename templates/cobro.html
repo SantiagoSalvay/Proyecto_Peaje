@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobro - Paso Seguro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/cobro.css' %}">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="text-uppercase fw-bold">Paso Seguro</h1>
+                <h3 class="fst-italic">Gestión de Pasadas</h3>
+            </div>
+            <div class="col-6 text-end">
+                <p class="text-large">Hora: <span id="currentTime">XX:XX:XX</span></p>
+            </div>
+        </div>
+        <div class="row mt-4">  
+            <div class="col-6">
+                <p class="text-large">Sentido de cobro: <span>X</span></p>
+            </div>
+            <div class="col-6 text-end">
+                <p class="text-large">Numero de casilla: <span>X</span></p>
+            </div>
+        <div class="row text-center my-4">
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Bicicleta" data-price="10">
+                    <i class="bi bi-bicycle"></i>
+                    <span>$10</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Moto" data-price="20">
+                    <i class="bi bi-bicycle"></i>
+                    <span>$20</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Auto" data-price="30">
+                    <i class="bi bi-car-front"></i>
+                    <span>$30</span>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center my-4" style="margin-top: 30px;"> 
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Colectivo" data-price="40">
+                    <i class="bi bi-bus-front"></i>
+                    <span>$40</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Camión 1 Acoplado" data-price="50">
+                    <i class="bi bi-truck"></i>
+                    <span>$50</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="border rounded-3 p-4 bg-light box" data-vehicle="Camión 2 Acoplados" data-price="60">
+                    <i class="bi bi-truck"></i>
+                    <span>$60</span>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-6">
+                <p class="text-large">Tipo de vehiculo: <span id="vehicleType"></span></p>
+                <p class="text-large">Monto a cobrar: <span id="vehiclePrice"></span></p>
+            </div>
+        </div>
+        
+            <div class="row justify-content-center mt-4">
+                <div class="col-6 text-center">
+                    <button class="btn btn-warning btn-custom me-2">Multar</button>
+                    <button class="btn btn-danger btn-custom">Terminar turno</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/cobro.js' %}"></script>
+    
+</body>
+</html>
