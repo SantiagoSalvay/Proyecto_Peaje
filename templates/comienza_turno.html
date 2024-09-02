@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de casilla - Paso Seguro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/comienza_turno.css' %}">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="titulo">PASO SEGURO</h1>
+        <p class="subtitulo">GESTIÓN DE PASADAS</p>
+        <div class="text-right">
+            <p>Hora: <span id="hora-actual">XX:XX:XX</span></p>
+        </div>
+        <form class="text-left">
+            <div class="form-group">
+                <label>Nombre:</label>
+                <span>X</span>
+            </div>
+            <div class="form-group">
+                <label>Apellido:</label>
+                <span>X</span>
+            </div>
+            <div class="form-group">
+                <label>Dinero Actual:</label>
+                <input type="text" class="form-control" id="dinero-actual">
+            </div>
+            <div class="form-group">
+                <label>Sentido de cobro:</label>
+                <select class="form-control">
+                    <option value="entrada">Entrada</option>
+                    <option value="salida">Salida</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Número de casilla:</label>
+                <span id="numero-casilla">X</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-light btn-volver">Volver</button>
+                <button type="submit" class="btn btn-success btn-confirmar">Confirmar e iniciar turno</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const comienzaTurnoUrl = "{% url 'cobro' %}";
+    </script>
+    <script src="{% static 'js/casilla.js' %}"></script>
+    <script src="{% static 'js/comienza_turno.js' %}"></script>
+</body>
+</html>
