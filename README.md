@@ -28,12 +28,9 @@ Este proyecto es una solución para la gestión y control de peajes. Proporciona
 
 2. Activa el entonro virtual :
    ```bash
-   source bin/activate 
+   pipenv shell 
 
-3. Muevete a la carpeta **Peaje** :
-   ```bash
-   cd Peaje/
-4. Activa la pagina :
+3. Activa la pagina :
    ```bash
    python3 manage.py runserver
 
