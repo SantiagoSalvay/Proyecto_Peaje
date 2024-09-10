@@ -16,7 +16,7 @@ Este proyecto es una solución para la gestión y control de peajes. Proporciona
 
 ## Recomendación
 
-**A la hora de runear el promgrama, recomendamos copiar la direccion del localhost y pegarla en una ventana de incognito**
+**A la hora de runear el promgrama, recomendamos copiar la direccion del localhost y pegarla en una ventana de incognito.**
 **Esto se debe a que el navegador por defecto puede afectar a la carga o actualizacion de los scripts, estilos, etc**
 
 
