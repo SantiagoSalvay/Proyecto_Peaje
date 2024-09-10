@@ -13,9 +13,11 @@ Este proyecto es una solución para la gestión y control de peajes. Proporciona
 
 - **Python 3.8.10**
 - **Django 4.2.14**
-- **MySQL**
 
+## Recomendación
 
+**A la hora de runear el promgrama, recomendamos copiar la direccion del localhost y pegarla en una ventana de incognito**
+**Esto se debe a que el navegador por defecto puede afectar a la carga o actualizacion de los scripts, estilos, etc**
 
 
 
@@ -34,7 +36,6 @@ Este proyecto es una solución para la gestión y control de peajes. Proporciona
    ```bash
    python manage.py runserver
 
-    
 ## License
 
 
