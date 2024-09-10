@@ -37,4 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
             event.target.value = formattedValue;
         }
     });
+
+
+    const volverButton = document.getElementById('volverButton');
+    volverButton.addEventListener('click', function() {
+
+        window.location.href = 'casilla/'; 
+    });
+    
+    
 });

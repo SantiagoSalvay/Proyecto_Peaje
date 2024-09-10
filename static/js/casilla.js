@@ -1,4 +1,3 @@
-// js/casilla.js
 document.addEventListener("DOMContentLoaded", function() {
     const casillas = document.querySelectorAll('.casilla');
 
