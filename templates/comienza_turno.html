@@ -17,7 +17,8 @@
         <div class="text-right">
             <p>Hora: <span id="hora-actual">XX:XX:XX</span></p>
         </div>
-        <form class="text-left">
+        <form class="text-left" method="POST" action="{% url 'cobro' %}">
+            {% csrf_token %}
             <div class="form-group">
                 <label>Nombre:</label>
                 <span>X</span>
@@ -32,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label>Sentido de cobro:</label>
-                <select class="form-control">
+                <select class="form-control" name="sentido-cobro">
                     <option value="entrada">Entrada</option>
                     <option value="salida">Salida</option>
                 </select>
@@ -40,12 +41,13 @@
             <div class="form-group">
                 <label>Número de casilla:</label>
                 <span id="numero-casilla">X</span>
+                <input type="hidden" name="numero-casilla" value="X">
             </div>
             <div class="d-flex justify-content-between">
                 <button type="button" id="volverButtom" class="btn btn-light btn-volver">Volver</button>
                 <button type="submit" id="confirmarButtom" class="btn btn-success btn-confirmar">Confirmar e iniciar turno</button>
             </div>
-        </form>
+        </form>        
     </div>
     <script>
         const cobrourl = "{% url 'cobro' %}";
