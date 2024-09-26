@@ -71,3 +71,12 @@ def generar_factura(request):
     buffer.seek(0)
     return HttpResponse(buffer, content_type='application/pdf')
 
+def cobro(request):
+    if request.method == "POST":
+        sentido_cobro = request.POST.get('sentido-cobro')
+        numero_casilla = request.POST.get('numero-casilla')
+        return render(request, 'cobro.html', {
+            'sentido_cobro': sentido_cobro,
+            'numero_casilla': numero_casilla
+        })
+    return render(request, 'cobro.html')
