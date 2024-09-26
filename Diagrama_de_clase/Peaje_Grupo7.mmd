@@ -1,0 +1,123 @@
+classDiagram
+    class EstacionDePeaje {
+        +int numeroDeEstacion
+        +string nombre
+        +string ubicacion
+        +getNumeroDeEstacion(): int
+        +getNombre(): string
+        +getUbicacion(): string
+        +agregarCasilla(casilla: CasillaDePeaje): void
+        +listarCasillas(): List<CasillaDePeaje>
+    }
+
+    class TurnoDeTrabajo {
+        +int idTurno
+        +datetime fechaHoraInicio
+        +datetime fechaHoraFin
+        +float montoCambioEntregado
+        +float plataInicial
+        +float plataFinal
+        +int numeroDeEstacion
+        +iniciarTurno(): void
+        +cerrarTurno(): void
+        +calcularGanancias(): float
+        +getDetallesTurno(): string
+    }
+
+    class CasillaDePeaje {
+        +int numeroDeCasilla
+        +int numeroDeEstacion
+        +string sentidoDeCobro
+        +getNumeroDeCasilla(): int
+        +getSentidoDeCobro(): string
+        +asignarTurno(turno: TurnoDeTrabajo): void
+    }
+
+    class Operador {
+        +int idOperador
+        +string nombre
+        +string apellido
+        +string telefono
+        +string direccion
+        +getNombreCompleto(): string
+        +getTelefono(): string
+        +registrarTurno(turno: TurnoDeTrabajo): void
+    }
+
+    class Pasada {
+        +int idPasada
+        +datetime fechaHoraPasada
+        +string pasadaTelepase
+        +string pasadaEfectivo
+        +string pasadaNoPaga
+        +int idTipoVehiculo
+        +registrarPago(tipo: string): void
+        +getDetallesPasada(): string
+        +esPagada(): boolean
+    }
+
+    class TipoVehiculo {
+        +int idTipoVehiculo
+        +string descripcion
+        +getDescripcion(): string
+        +calcularTarifa(historial: HistorialTarifas): float
+    }
+
+    class HistorialTarifas {
+        +int idHistorial
+        +int idTipoVehiculo
+        +datetime fechaInicio
+        +datetime fechaFin
+        +float tarifa
+        +boolean tarifaActual
+        +getTarifa(): float
+        +esTarifaActual(): boolean
+        +getDuracionTarifa(): int
+    }
+
+    class RegistroEfectivo {
+        +int idRegistro
+        +datetime fechaHoraEmision
+        +float importeCobrado
+        +string codigoQR
+        +int idHistorialTarifas
+        +emitirRegistro(): void
+        +getDetallesRegistro(): string
+        +validarRegistro(): boolean
+    }
+
+    class RegistroTelepase {
+        +int idRegistro
+        +datetime fechaHoraEmision
+        +float importeCobrado
+        +string codigoTelepase
+        +string usuario
+        +string direccion
+        +string patente
+        +int tarjetaDebito
+        +emitirRegistro(): void
+        +getDetallesRegistro(): string
+        +validarRegistro(): boolean
+    }
+
+    class NoPagados {
+        +int idNoPagado
+        +string nombreConductor
+        +string apellidoConductor
+        +string dniConductor
+        +datetime fechaHoraEmision
+        +getDetallesNoPagado(): string
+        +registrarNoPagado(): void
+    }
+
+    EstacionDePeaje "1" -- "0..*" CasillaDePeaje : contiene
+    EstacionDePeaje "1" -- "0..*" TurnoDeTrabajo : tiene
+    TurnoDeTrabajo "1" -- "0..*" Operador : es realizado por
+    TurnoDeTrabajo "1" -- "0..*" Pasada : tiene
+    Pasada "0..1" -- "0..1" RegistroEfectivo : puede ser
+    Pasada "0..1" -- "0..1" RegistroTelepase : puede ser
+    Pasada "0..1" -- "0..1" NoPagados : puede ser
+    RegistroEfectivo "1" -- "1" HistorialTarifas : usa
+    RegistroTelepase "1" -- "1" HistorialTarifas : usa
+    HistorialTarifas "1" -- "0..*" TipoVehiculo : puede tener
+    HistorialTarifas "1" -- "0..*" NoPagados : usa
