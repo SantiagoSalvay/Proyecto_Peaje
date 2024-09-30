@@ -1,49 +1,107 @@
-# Proyecto Peaje
+# Proyecto de Gestión de Peaje - "Paso Seguro"
 
-Este proyecto es una solución para la gestión y control de peajes. Proporciona funcionalidades clave para la administración eficiente de un sistema de cobro en carreteras.
+Este proyecto es una aplicación web de gestión de peajes, llamada "Paso Seguro", desarrollada con Django. Permite realizar diversas operaciones relacionadas con la administración de cobros en casillas de peaje, el control de turnos, y la generación de reportes en formato PDF.
 
-## Características
+## Características principales
 
-- **Gestión de tarifas:** Define y administra tarifas para diferentes tipos de vehículos.
-- **Control de acceso:** Registro de entrada y salida de vehículos en las estaciones de peaje.
-- **Reportes:** Generación de reportes detallados sobre la recaudación y tráfico vehicular.
-- **Interfaz amigable:** Una interfaz gráfica fácil de usar para los operadores.
+- **Gestión de turnos**: Permite iniciar y finalizar turnos de los operadores.
+- **Gestión de cobros**: Registro y cálculo de los montos cobrados en función del tipo de vehículo.
+- **Generación de reportes**: Generación de un PDF al final de cada turno, con un resumen de las transacciones realizadas.
+- **Interfaz moderna**: Uso de Bootstrap para proporcionar una interfaz intuitiva y adaptable.
 
-## Requisitos
+## Estructura del Proyecto
 
-- **Python 3.8.10**
-- **Django 4.2.14**
+El proyecto está organizado de la siguiente manera:
 
-## Recomendación
+- `Peaje_Proyecto/`: Directorio principal del proyecto Django.
+  - `Peaje_Proyecto/`: Contiene la configuración del proyecto (urls, settings, etc.).
+  - `static/`: Archivos estáticos como hojas de estilo CSS y scripts JS.
+  - `templates/`: Archivos HTML que representan la interfaz de la aplicación.
+  - `apps/`: Directorios que contienen las aplicaciones individuales dentro del proyecto.
+  - `__pycache__/`: Archivos compilados por Python para mejorar el rendimiento.
+  
+- `static/css/`: Contiene las hojas de estilo para diferentes partes de la aplicación (e.g., `casilla.css`, `fin_turno.css`).
+- `static/js/`: Contiene los scripts JavaScript asociados a la funcionalidad dinámica de cada parte de la aplicación.
+- `templates/`: Contiene los archivos HTML para las vistas del sistema como `casilla.html`, `cobro.html`, `fin_turno.html`, etc.
 
-**A la hora de runear el promgrama, recomendamos copiar la direccion del localhost y pegarla en una ventana de incognito.**
-**Esto se debe a que el navegador por defecto puede afectar a la carga o actualizacion de los scripts, estilos, etc**
+## Instalación
 
+### Requisitos
 
+Para ejecutar el proyecto necesitarás instalar las siguientes dependencias:
 
+- **Python 3.x**: Puedes descargar Python desde [python.org](https://www.python.org/downloads/).
+- **Django 4.x**: Django es el framework utilizado para desarrollar la aplicación.
+- **reportlab**: Librería utilizada para generar archivos PDF en Python.
+- **qrcode**: Librería para generar códigos QR.
 
-## Installation
+### Pasos de instalación
 
-1. Clona el repositorio:
+1. **Clona el repositorio**:
+
+   Clona el proyecto desde el repositorio (reemplaza `<url-del-repositorio>` con el enlace correspondiente):
+
    ```bash
-   git clone https://github.com/Santy-Mendez/Proyecto_Peaje.git
+   git clone <url-del-repositorio>
 
-2. Activa el entonro virtual :
+2. **Navega al directorio del proyecto**:
+
+
    ```bash
-   pipenv shell 
+   cd Proyecto_Peajeç
 
-3. Activa la pagina :
+3. **Instala las dependencias necesarias**:
+
+
+   ```bash
+   pip install -r requirements.txt
+
+4. **Aplica las migraciones**:
+
+
+   ```bash
+   python manage.py migrate
+
+5. **Ejecuta el servidor de desarrollo**:
+
+
    ```bash
    python manage.py runserver
 
-## License
+6. **Accede a la aplicacion**:
+
+   Abre tu navegador y accede a la aplicación en la siguiente URL:
+
+   ```bash
+   http://127.0.0.1:8000
+
+## Generación de reportes PDF
+
+Al finalizar cada turno, se genera un reporte en formato PDF que incluye los detalles del cobro. Este se puede descargar automáticamente al hacer clic en el botón "Terminar Turno". El reporte incluye:
+
+- Nombre y apellido del operador.
+- Número de casilla.
+- Sentido de cobro.
+- Monto recaudado.
+- Código QR con enlace a más información.
+
+## Archivos importantes
+
+- `views.py`: Contiene la lógica de generación de los reportes PDF.
+- `urls.py`: Define las rutas de acceso a las distintas funcionalidades del sistema.
+- `templates/`: Los archivos HTML que estructuran la interfaz del usuario.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+## Miembros
+
+- Mateo Raviolo
+- Mateo Barbini
+- Santiago Salvay
 
 
-Este `README.md` está diseñado para proporcionar una introducción clara y concisa a tu proyecto, así como instrucciones básicas para la instalación y contribución. Si hay más detalles específicos que deseas agregar, puedes modificarlos según sea necesario.
 
 
-## Autores
 
-- **Mateo Raviolo**
-- **Mateo Barbini**
-- **Santiago Salvay**
