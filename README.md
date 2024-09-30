@@ -30,8 +30,8 @@ El proyecto está organizado de la siguiente manera:
 
 Para ejecutar el proyecto necesitarás instalar las siguientes dependencias:
 
-- **Python 3.x**: Puedes descargar Python desde [python.org](https://www.python.org/downloads/).
-- **Django 4.x**: Django es el framework utilizado para desarrollar la aplicación.
+- **Python 3.12.4**: Puedes descargar Python desde [python.org](https://www.python.org/downloads/).
+- **Django 5.1.1**: Django es el framework utilizado para desarrollar la aplicación.
 - **reportlab**: Librería utilizada para generar archivos PDF en Python.
 - **qrcode**: Librería para generar códigos QR.
 
