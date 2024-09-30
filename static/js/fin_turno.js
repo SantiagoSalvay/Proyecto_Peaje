@@ -12,3 +12,8 @@ function actualizarHora() {
 actualizarHora();
 
 setInterval(actualizarHora, 1000);
+
+const terminarButton = document.getElementById('terminarButtom');
+    terminarButton.addEventListener('click', function() {
+        window.location.href = 'http://127.0.0.1:8000';  
+    });

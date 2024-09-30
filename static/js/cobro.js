@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const numeroCasilla = urlParams.get('casilla');
     const sentidoCobro = urlParams.get('sentido');
 
-
     if (document.getElementById('numero-casilla')) {
         document.getElementById('numero-casilla').textContent = numeroCasilla;
     }
@@ -68,9 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
     const multarButton = document.getElementById('multarButton');
     multarButton.addEventListener('click', function() {
-
         window.location.href = '/casilla/comienza-turno/cobro/multa'; 
+    });
+
+    const terminarTurnoButton = document.getElementById('terminarTurnoButton');
+    terminarTurnoButton.addEventListener('click', function() {
+        window.location.href = '/casilla/comienza-turno/cobro/fin-turno';  
     });
 });
