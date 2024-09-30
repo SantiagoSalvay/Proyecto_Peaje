@@ -15,6 +15,9 @@ def cobro(request):
 def multa(request):
     return render(request, 'multa.html')
 
+def fin_turno(request):
+    return render(request, 'fin_turno.html')
+
 from django.http import HttpResponse
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -80,3 +83,6 @@ def cobro(request):
             'numero_casilla': numero_casilla
         })
     return render(request, 'cobro.html')
+
+
+

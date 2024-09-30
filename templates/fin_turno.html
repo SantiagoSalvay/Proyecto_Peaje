@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso Seguro - Gestión de Pasadas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/fin_turno.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="titulo">PASO SEGURO</h1>
+        <p class="subtitulo">GESTIÓN DE PASADAS</p>
+        <div class="text-right">
+            <p>Hora: <span id="hora-actual">XX:XX:XX</span></p>
+        </div>
+
+        <div class="row mt-5 align-items-center">
+            <div class="col-md-6 text-start">
+                <p><strong>Sentido de cobro:</strong> X</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <p><strong>Número de casilla:</strong> X</p>
+            </div>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-8">
+                <p class="d-flex justify-content-between"><strong>Nombre:</strong> X &nbsp;&nbsp;&nbsp; <strong>Apellido:</strong> X</p>
+                <p class="d-flex justify-content-between"><strong>Casilla:</strong> X &nbsp;&nbsp;&nbsp; <strong>Sentido de Corbo:</strong> X</p>
+                <p class="d-flex justify-content-center"><strong>Monto juntado:</strong> X</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <button class="btn btn-success">Terminar Turno</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="{% static 'js/fin_turno.js' %}"></script>
+</body>
+</html>

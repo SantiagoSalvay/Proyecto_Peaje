@@ -23,15 +23,15 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    max-width: 500px; /* Aumentado el tamaño del cuadro de login */
+    max-width: 500px; 
     width: 100%;
 }
 
 .form-control, .form-select {
     border: 2px solid #ccc;
-    padding: 1rem; /* Aumentado el padding de los campos de entrada */
+    padding: 1rem; 
     border-radius: 5px;
-    font-size: 1.1rem; /* Aumentado el tamaño del texto */
+    font-size: 1.1rem; 
 }
 
 .form-control:focus, .form-select:focus {
@@ -44,7 +44,7 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    padding: 0.9rem 1.2rem; /* Aumentado el tamaño del botón */
+    padding: 0.9rem 1.2rem; 
 }
 
 .btn-primary:hover {
@@ -52,5 +52,5 @@ body {
 }
 
 .btn-lg {
-    padding: 1rem 1.5rem; /* Aumentado el padding del botón */
+    padding: 1rem 1.5rem; 
 }
