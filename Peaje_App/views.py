@@ -43,7 +43,7 @@ def generar_factura(request):
     p.drawString(100, height - 50, "Factura de Cobro - Paso Seguro")
 
     p.setFont("Helvetica", 12)
-    p.drawString(100, height - 100, f"Peaje: X")
+    p.drawString(100, height - 100, f"Peaje: Paso Seguro")
     p.drawString(100, height - 120, f"Casilla: X")
 
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
