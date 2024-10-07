@@ -96,6 +96,8 @@ class NoPagados(models.Model):
     apellido_conductor = models.CharField(max_length=255)
     dni_conductor = models.CharField(max_length=20)
     fecha_hora_de_emision = models.DateTimeField()
+    tipo_vehiculo = models.CharField(max_length=20, null=True, blank=True)  
+    importe = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  
 
     def __str__(self):
         return f"No Pagado {self.id_no_pagado}"
@@ -105,7 +107,7 @@ class Pasada(models.Model):
     id_pasada = models.IntegerField(primary_key=True)
     id_tipo_vehiculo = models.ForeignKey(TipoVehiculo, on_delete=models.CASCADE)
     fecha_hora_de_pasada = models.DateTimeField()
-    pasada_telepase = models.CharField(max_length=255, null=True, blank=True)
+    pasada_telepase = models.CharField(max_length=255, null=True, blank=True)   
     pasada_efectivo = models.CharField(max_length=255, null=True, blank=True)
     pasada_no_paga = models.CharField(max_length=255, null=True, blank=True)
 
