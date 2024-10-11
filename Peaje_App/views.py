@@ -25,7 +25,7 @@ from reportlab.lib.utils import ImageReader
 import qrcode
 from io import BytesIO
 from datetime import datetime
-
+ 
 def generar_factura(request):
     vehiculo = request.GET.get('vehiculo')
     importe = request.GET.get('importe')

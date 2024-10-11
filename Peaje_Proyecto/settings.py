@@ -84,7 +84,7 @@ DATABASES = {
         'HOST': 'localhost',
         'POST': '3306',
     }
-}
+} 
 
 
 # Password validation

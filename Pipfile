@@ -10,7 +10,7 @@ qrcode = "*"
 mysql = "*"
 mysqlclient = "*"
 pymysql = "*"
-
+ 
 [dev-packages]
 
 [requires]
