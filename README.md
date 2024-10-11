@@ -44,25 +44,31 @@ Para ejecutar el proyecto necesitarás instalar las siguientes dependencias:
    ```bash
    git clone <url-del-repositorio>
 
-2. **Instala las dependencias necesarias**:
+2. **Navega al directorio del proyecto**:
+
+
+   ```bash
+   cd Proyecto_Peaje
+
+3. **Instala las dependencias necesarias**:
 
 
    ```bash
    pip install -r requirements.txt
 
-3. **Aplica las migraciones**:
+4. **Aplica las migraciones**:
 
 
    ```bash
    python manage.py migrate
 
-4. **Ejecuta el servidor de desarrollo**:
+5. **Ejecuta el servidor de desarrollo**:
 
 
    ```bash
    python manage.py runserver
 
-5. **Accede a la aplicacion**:
+6. **Accede a la aplicacion**:
 
    Abre tu navegador y accede a la aplicación en la siguiente URL:
 
