@@ -77,14 +77,10 @@ WSGI_APPLICATION = 'Peaje_Proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'peaje_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOTS': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} 
 
 
 # Password validation

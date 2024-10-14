@@ -48,7 +48,7 @@ Para ejecutar el proyecto necesitarás instalar las siguientes dependencias:
 
 
    ```bash
-   cd Proyecto_Peajeç
+   cd Proyecto_Peaje
 
 3. **Instala las dependencias necesarias**:
 
