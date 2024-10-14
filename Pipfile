@@ -8,6 +8,7 @@ django = "*"
 reportlab = "*"
 qrcode = "*"
 mysql = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
