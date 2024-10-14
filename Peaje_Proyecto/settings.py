@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'Peaje_Proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'peaje_db',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME': 'peaje_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOTS': 'localhost',
+        'PORT': '3306',
     }
 } 
 
