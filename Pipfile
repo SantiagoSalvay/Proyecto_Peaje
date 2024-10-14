@@ -9,12 +9,8 @@ reportlab = "*"
 qrcode = "*"
 mysql = "*"
 mysqlclient = "*"
-<<<<<<< HEAD
-
-=======
 pymysql = "*"
- 
->>>>>>> db4989536103b87cd466103d60ab67ce9d6fbd8b
+
 [dev-packages]
 
 [requires]
