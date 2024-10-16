@@ -14,7 +14,7 @@
     <div class="container text-center mt-5">
         <h1 class="titulo">PASO SEGURO</h1>
         <p class="subtitulo">GESTIÓN DE PASADAS</p>
-        <p class="bienvenida">Bienvenido: X</p>
+        <p class="bienvenida">Bienvenido: {{ request.session.nombre }} {{ request.session.apellido }}</p>
         <div class="mt-4 text-left">
             <h4 class="text-start selector-casilla">Seleccione su casilla:</h4>
             <div class="casillas-box mt-3 p-4 rounded shadow-lg">

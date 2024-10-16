@@ -1,6 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from Peaje_App.models import Operador
+from django.contrib import messages
 
 def index(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        apellido = request.POST.get('apellido')
+        contraseña = request.POST.get('contraseña')
+
+        try:
+            operador = Operador.objects.get(nombre=nombre, apellido=apellido)
+
+            if operador.contraseña == contraseña:  
+                
+                request.session['nombre'] = operador.nombre
+                request.session['apellido'] = operador.apellido
+                return redirect('/casilla/')  
+            else:
+                messages.error(request, "Contraseña incorrecta.")
+        except Operador.DoesNotExist:
+            messages.error(request, "Nombre o apellido incorrectos.")
+
     return render(request, 'index.html')
 
 def Casilla(request):

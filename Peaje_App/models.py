@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.hashers import  check_password, make_password
 class EstacionDePeaje(models.Model):
     numero_de_estacion = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=255)
@@ -25,6 +25,10 @@ class Operador(models.Model):
     telefono = models.CharField(max_length=20, null=True, blank=True)
     direccion = models.CharField(max_length=255, null=True, blank=True)
     dni = models.IntegerField(unique=True, default=0)
+    contraseña = models.CharField(max_length=255) 
+
+    def verificar_contraseña(self, raw_password):
+        return raw_password == self.contraseña  
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"

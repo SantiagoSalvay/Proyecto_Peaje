@@ -22,11 +22,11 @@
             {% csrf_token %}
             <div class="form-group">
                 <label>Nombre:</label>
-                <span>X</span>
+                <span>{{ request.session.nombre }} </span>
             </div>
             <div class="form-group">
                 <label>Apellido:</label>
-                <span>X</span>
+                <span>{{ request.session.apellido }}</span>
             </div>
             <div class="form-group">
                 <label>Dinero Actual:</label>

@@ -17,7 +17,12 @@
             <h4 class="subtitulo">GESTIÓN DE PASADAS</h4> 
         </div>
         <div class="login-box p-5 shadow-lg rounded">
-            <form id="loginForm" method="POST">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <form id="loginForm" method="POST" action="{% url 'index' %}">
                 {% csrf_token %}
                 <div class="mb-4">
                     <label for="nombre" class="form-label">Nombre</label>
