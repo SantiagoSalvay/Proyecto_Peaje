@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Peaje_Proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bd_peaje',
+        'NAME': 'peaje_db1',
         'USER': 'root',
         'PASSWORD': '',
         'HOTS': 'localhost',
