@@ -18,10 +18,23 @@
         </div>
         <div class="login-box p-5 shadow-lg rounded">
             {% if messages %}
+            <div>
                 {% for message in messages %}
-                    <div class="alert alert-danger">{{ message }}</div>
+                    <div class="alert 
+                        {% if message.tags %}
+                            {% if message.tags == 'success' %}alert-success
+                            {% elif message.tags == 'error' %}alert-danger
+                            {% elif message.tags == 'warning' %}alert-warning
+                            {% elif message.tags == 'info' %}alert-info
+                            {% else %}alert-secondary
+                            {% endif %}
+                        {% else %}alert-info
+                        {% endif %}" role="alert">
+                        {{ message }}
+                    </div>
                 {% endfor %}
-            {% endif %}
+            </div>
+        {% endif %}
             <form id="loginForm" method="POST" action="{% url 'index' %}">
                 {% csrf_token %}
                 <div class="mb-4">

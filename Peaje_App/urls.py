@@ -1,13 +1,13 @@
 from django.urls import path
-from . import views
+from .views import IndexView, CargarOperadorView, CasillaView, ComienzaTurnoView, CobroView, MultaView, FinTurnoView, GenerarFacturaView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('cargar-operador/', views.cargar_operador, name='cargar_operador'),
-    path('casilla/', views.Casilla, name='casilla'),
-    path('casilla/comienza-turno/', views.comienza_turno, name='comienza_turno'),
-    path('casilla/comienza-turno/cobro', views.cobro, name='cobro'),
-    path('casilla/comienza-turno/cobro/multa', views.multa, name='multa'),
-    path('casilla/comienza-turno/cobro/fin-turno', views.fin_turno, name='turno'),
-    path('generar-factura/', views.generar_factura, name='generar_factura'),
+    path('', IndexView.as_view(), name='index'),
+    path('cargar-operador/', CargarOperadorView.as_view(), name='cargar_operador'),
+    path('casilla/', CasillaView.as_view(), name='casilla'),
+    path('casilla/comienza-turno/', ComienzaTurnoView.as_view(), name='comienza_turno'),
+    path('casilla/comienza-turno/cobro', CobroView.as_view(), name='cobro'),
+    path('casilla/comienza-turno/cobro/multa', MultaView.as_view(), name='multa'),
+    path('casilla/comienza-turno/cobro/fin-turno', FinTurnoView.as_view(), name='turno'),
+    path('generar-factura/', GenerarFacturaView.as_view(), name='generar_factura'),
 ]
