@@ -8,11 +8,16 @@ def index(request):
         apellido = request.POST.get('apellido')
         contraseña = request.POST.get('contraseña')
 
+        
+        if nombre == 'admin' and apellido == 'admin' and contraseña == 'admin':
+            return redirect('/cargar-operador/')  
+
         try:
+            
             operador = Operador.objects.get(nombre=nombre, apellido=apellido)
 
+            
             if operador.contraseña == contraseña:  
-                
                 request.session['nombre'] = operador.nombre
                 request.session['apellido'] = operador.apellido
                 return redirect('/casilla/')  
@@ -22,6 +27,37 @@ def index(request):
             messages.error(request, "Nombre o apellido incorrectos.")
 
     return render(request, 'index.html')
+
+
+def cargar_operador(request):
+    if request.method == 'POST':
+        
+        nombre = request.POST.get('nombre')
+        apellido = request.POST.get('apellido')
+        telefono = request.POST.get('telefono')
+        direccion = request.POST.get('direccion')
+        dni = request.POST.get('dni')
+        contraseña = request.POST.get('contraseña')
+
+        
+        if Operador.objects.filter(dni=dni).exists():
+            messages.error(request, "El DNI ya está registrado.")
+            return render(request, 'registro_trabajador.html')
+
+        
+        operador = Operador(
+            nombre=nombre,
+            apellido=apellido,
+            telefono=telefono,
+            direccion=direccion,
+            dni=dni,
+            contraseña=contraseña,  
+        )
+        operador.save()  
+
+        messages.success(request, "Operador registrado exitosamente.")
+
+    return render(request, 'registro_trabajador.html')
 
 def Casilla(request):
     if request.method == 'POST':
