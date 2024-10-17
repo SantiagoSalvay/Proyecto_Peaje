@@ -73,6 +73,9 @@ def generar_factura(request):
     vehiculo = request.GET.get('vehiculo')
     importe = request.GET.get('importe')
 
+    
+    numero_casilla = request.session.get('numero_casilla')
+    
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="factura_{vehiculo}.pdf"'
 
@@ -82,35 +85,45 @@ def generar_factura(request):
     p.setTitle("Factura")
     width, height = letter
 
+    
     p.setFont("Helvetica-Bold", 18)
     p.drawString(100, height - 50, "Factura de Cobro - Paso Seguro")
 
     p.setFont("Helvetica", 12)
     p.drawString(100, height - 100, f"Peaje: Paso Seguro")
-    p.drawString(100, height - 120, f"Casilla: X")
 
+    
+    p.drawString(100, height - 120, f"Casilla: {numero_casilla}")  
+
+    
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     p.drawString(100, height - 140, f"Fecha y Hora de Emisión: {fecha_hora}")
+
+    
     p.drawString(100, height - 160, f"Tipo de Vehículo: {vehiculo}")
     p.drawString(100, height - 180, f"Importe Cobrado: ${importe}")
+    
+    
     p.drawString(100, height - 220, "Muchas gracias por confiar en nuestro peaje")
 
+    
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=10,
         border=4,
     )
-    qr.add_data('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+    qr.add_data('https://www.youtube.com/watch?v=xvFZjo5PgG0')  
     qr.make(fit=True)
 
     img = qr.make_image(fill='black', back_color='white')
-
     img_pil = img.convert('RGB')
     img_reader = ImageReader(img_pil)
 
+    
     p.drawImage(img_reader, 100, height - 400, 150, 150)
 
+    
     p.showPage()
     p.save()
 
