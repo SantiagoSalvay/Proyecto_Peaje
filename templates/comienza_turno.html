@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-    {% load static %}
+{% load static %}
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +21,7 @@
             {% csrf_token %}
             <div class="form-group">
                 <label>Nombre:</label>
-                <span>{{ request.session.nombre }} </span>
+                <span>{{ request.session.nombre }}</span>
             </div>
             <div class="form-group">
                 <label>Apellido:</label>
@@ -30,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label>Dinero Actual:</label>
-                <input type="text" class="form-control" id="dinero-actual">
+                <input type="text" class="form-control" id="dinero-actual" name="dinero-actual">
             </div>
             <div class="form-group">
                 <label>Sentido de cobro:</label>
@@ -41,8 +40,8 @@
             </div>
             <div class="form-group">
                 <label>Número de casilla:</label>
-                <span id="numero-casilla">X</span>
-                <input type="hidden" name="numero-casilla" value="X">
+                <span id="numero-casilla">{{ request.session.numero_casilla }}</span>  
+                <input type="hidden" name="numero-casilla" value="{{ request.session.numero_casilla }}">  
             </div>
             <div class="d-flex justify-content-between">
                 <button type="button" id="volverButtom" class="btn btn-light btn-volver">Volver</button>
@@ -50,10 +49,44 @@
             </div>
         </form>        
     </div>
+
     <script>
-        const cobrourl = "{% url 'cobro' %}";
+        
+        function actualizarHora() {
+            const ahora = new Date();
+            const horas = String(ahora.getHours()).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+            const segundos = String(ahora.getSeconds()).padStart(2, '0');
+            document.getElementById('hora-actual').textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        
+        setInterval(actualizarHora, 1000);
+        actualizarHora();  
+
+        
+        const inputDinero = document.getElementById('dinero-actual');
+        inputDinero.addEventListener('input', function(event) {
+            let value = event.target.value;
+
+            
+            value = value.replace(/[^\d]/g, '');
+
+            
+            const number = parseInt(value, 10);
+            if (!isNaN(number)) {
+                const formattedValue = new Intl.NumberFormat('es-ES', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }).format(number / 100);
+                event.target.value = formattedValue;
+            }
+        });
+
+        
+        document.getElementById('volverButtom').addEventListener('click', function() {
+            window.history.back();
+        });
     </script>
-    <script src="{% static 'js/casilla.js' %}"></script>
-    <script src="{% static 'js/comienza_turno.js' %}"></script>
 </body>
 </html>

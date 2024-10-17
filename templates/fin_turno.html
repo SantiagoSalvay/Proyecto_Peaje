@@ -19,16 +19,16 @@
 
         <div class="row mt-5 align-items-center">
             <div class="col-md-6 text-start">
-                <p><strong>Sentido de cobro:</strong> X</p>
+                <p><strong>Sentido de cobro:</strong> {{ sentido_cobro }}</p>
             </div>
             <div class="col-md-6 text-end">
-                <p><strong>Número de casilla:</strong> X</p>
+                <p><strong>Número de casilla:</strong> {{ request.session.numero_casilla }}</p>
             </div>
         </div>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-8">
-                <p class="d-flex justify-content-between"><strong>Nombre:</strong> X &nbsp;&nbsp;&nbsp; <strong>Apellido:</strong> X</p>
+                <p class="d-flex justify-content-between"><strong>Nombre:</strong> {{ request.session.nombre }} &nbsp; <strong>Apellido:</strong> {{ request.session.apellido }}</p>
                 <p class="d-flex justify-content-center"><strong>Monto juntado:</strong> X</p>
             </div>
         </div>

@@ -18,30 +18,54 @@
         <div class="mt-4 text-left">
             <h4 class="text-start selector-casilla">Seleccione su casilla:</h4>
             <div class="casillas-box mt-3 p-4 rounded shadow-lg">
-                
                 <div class="w-100 d-flex justify-content-start mb-2">
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">1</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">2</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">3</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">4</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">5</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="1">Casilla <span class="numero">1</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="2">Casilla <span class="numero">2</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="3">Casilla <span class="numero">3</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="4">Casilla <span class="numero">4</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="5">Casilla <span class="numero">5</span></button>
                 </div>
                 
                 <div class="w-100 d-flex justify-content-start">
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">6</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">7</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">8</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">9</span></button>
-                    <button class="casilla btn btn-light m-2">Casilla <span class="numero">10</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="6">Casilla <span class="numero">6</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="7">Casilla <span class="numero">7</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="8">Casilla <span class="numero">8</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="9">Casilla <span class="numero">9</span></button>
+                    <button class="casilla btn btn-light m-2" data-casilla="10">Casilla <span class="numero">10</span></button>
                 </div>
             </div>
         </div>
     </div>
     
-    
     <script>
-        const comienzaTurnoUrl = "{% url 'comienza_turno' %}";
+        document.querySelectorAll('.casilla').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const numeroCasilla = this.getAttribute('data-casilla'); 
+                const csrfToken = '{{ csrf_token }}';
+
+                
+                fetch('{% url "casilla" %}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: `numero_casilla=${numeroCasilla}`
+                })
+                .then(response => {
+                    if (response.ok) {
+                        
+                        location.href = '{% url "comienza_turno" %}';
+                    } else {
+                        throw new Error('Error en la petición');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
     </script>
-    <script src="{% static 'js/casilla.js' %}"></script>
+    
 </body>
 </html>
