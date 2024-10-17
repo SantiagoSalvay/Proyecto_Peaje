@@ -95,8 +95,8 @@ Al finalizar cada turno, se genera un reporte en formato PDF que incluye los det
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-## Miembros
-
+## Contribuidores
+#### Este proyecto fue desarrollado por:
 - Mateo Raviolo
 - Mateo Barbini
 - Santiago Salvay
