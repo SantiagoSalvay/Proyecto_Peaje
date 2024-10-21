@@ -3,8 +3,7 @@ from django.views import View
 from .handlers.index_handler import procesar_login
 from .handlers.operador_handler import registrar_operador, procesar_casilla
 from .handlers.factura_handler import generar_factura_pdf
-from .handlers.turno_handler import cargar_turno
-from Peaje_App.models import Operador, CasillaDePeaje, EstacionDePeaje
+from .handlers.cobro_handler import CobroHandler
 
 
 class IndexView(View):
@@ -36,15 +35,10 @@ class ComienzaTurnoView(View):
 
 class CobroView(View):
     def get(self, request):
-        return render(request, 'cobro.html')
+        return CobroHandler.handle_get(request)
 
     def post(self, request):
-        sentido_cobro = request.POST.get('sentido-cobro')
-        numero_casilla = request.POST.get('numero-casilla')
-        return render(request, 'cobro.html', {
-            'sentido_cobro': sentido_cobro,
-            'numero_casilla': numero_casilla
-        })
+        return CobroHandler.handle_post(request)
 
 
 class MultaView(View):
