@@ -4,6 +4,8 @@ from .handlers.index_handler import IndexHandler
 from .handlers.operador_handler import OperadorHandler
 from .handlers.factura_handler import FacturaHandler
 from .handlers.cobro_handler import CobroHandler
+from .handlers.casilla_handler import CasillaHandler
+from .models import Operador
 
 class IndexView(View):
     def get(self, request):
@@ -14,17 +16,19 @@ class IndexView(View):
 
 class CargarOperadorView(View):
     def get(self, request):
-        return render(request, 'registro_trabajador.html')
+        operadores = Operador.objects.all()
+        return render(request, 'registro_trabajador.html', {'operadores': operadores})
 
     def post(self, request):
         return OperadorHandler.registrar_operador(request)
+
 
 class CasillaView(View):
     def get(self, request):
         return render(request, 'casilla.html')
 
     def post(self, request):
-        return OperadorHandler.procesar_casilla(request)
+        return CasillaHandler.procesar_casilla(request)
 
 class ComienzaTurnoView(View):
     def get(self, request):

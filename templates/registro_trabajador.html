@@ -5,78 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Operador - Paso Seguro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/carga_operador.css' %}">
     <link rel="icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <h2 class="main-title">PASO SEGURO</h2>
-        <p class="main-subtitle">Gestión de Operadores</p>
+        <header>
+            <h2 class="main-title">PASO SEGURO</h2>
+            <p class="main-subtitle">Gestión de Operadores</p>
+        </header>
 
-        <div class="form-container">
-            <form method="POST" action="{% url 'cargar_operador' %}">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </div>
-                <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required>
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono">
-                </div>
-                <div class="mb-3">
-                    <label for="direccion" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion">
-                </div>
-                <div class="mb-3">
-                    <label for="dni" class="form-label">DNI</label>
-                    <input type="number" class="form-control" id="dni" name="dni" required>
-                </div>
-                <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contraseña" name="contraseña" required>
-                </div>
-                <button type="submit" class="btn btn-success w-100">Registrar Operador</button>
-            </form>
-        </div>
+        
+        <section id="form-section">
+            <div class="form-container">
+                <form method="POST" action="{% url 'cargar_operador' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label">DNI</label>
+                        <input type="number" class="form-control" id="dni" name="dni" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Registrar Operador</button>
+                </form>
+            </div>
+        </section>
 
-
-        <div class="mt-5">
-            <h3>Operadores Registrados</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>DNI</th>
-                        <th>Contraseña</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for operador in operadores %}
+        <section id="table-section" class="mt-5">
+            <h3>Operadores Registrados (Total: {{ operadores|length }})</h3>
+            <div class="table-container">
+                <table class="table table-striped">
+                    <thead>
                         <tr>
-                            <td>{{ operador.nombre }}</td>
-                            <td>{{ operador.apellido }}</td>
-                            <td>{{ operador.telefono }}</td>
-                            <td>{{ operador.direccion }}</td>
-                            <td>{{ operador.dni }}</td>
-                            <td>{{ operador.contraseña }}</td>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>DNI</th>
+                            <th>Contraseña</th>
+                            <th>Acciones</th> 
                         </tr>
-                    {% empty %}
-                        <tr>
-                            <td colspan="6">No hay operadores registrados</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {% for operador in operadores %}
+                            <tr>
+                                <td>{{ operador.nombre }}</td>
+                                <td>{{ operador.apellido }}</td>
+                                <td>{{ operador.telefono }}</td>
+                                <td>{{ operador.direccion }}</td>
+                                <td>{{ operador.dni }}</td>
+                                <td>{{ operador.contraseña }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger" title="Eliminar">
+                                        <i class="fas fa-trash-alt"></i> 
+                                    </button>
+                                    <button class="btn btn-sm btn-primary" title="Cargar">
+                                        <i class="fas fa-upload"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% empty %}
+                        {% endfor %}
+                    </tbody>
+                    
+                </table>
+            </div>
+        </section>
     </div>
 </body>
 </html>
