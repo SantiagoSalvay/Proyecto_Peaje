@@ -23,10 +23,10 @@
         </div>
         <div class="row mt-4">  
             <div class="col-6">
-                <p class="text-large">Sentido de cobro: <span>{{ sentido_cobro }}</span></p>
+                <p class="text-large">Sentido de cobro: <span>{{ request.session.sentido_cobro }}</span></p>
             </div>
             <div class="col-6 text-end">
-                <p class="text-large">Numero de casilla: <span>{{ numero_casilla }}</span></p>
+                <p class="text-large">Numero de casilla: <span>{{ request.session.numero_casilla }}</span></p>
             </div>
         </div>        
         <div class="row text-center my-4">

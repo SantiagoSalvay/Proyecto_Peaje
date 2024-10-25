@@ -19,7 +19,7 @@
 
         <div class="row mt-5 align-items-center">
             <div class="col-md-6 text-start">
-                <p><strong>Sentido de cobro:</strong> {{ sentido_cobro }}</p>
+                <p><strong>Sentido de cobro:</strong> {{ request.session.sentido_cobro }}</p>
             </div>
             <div class="col-md-6 text-end">
                 <p><strong>Número de casilla:</strong> {{ request.session.numero_casilla }}</p>
