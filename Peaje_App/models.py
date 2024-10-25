@@ -39,11 +39,8 @@ class TurnoDeTrabajo(models.Model):
     id_turno = models.IntegerField(primary_key=True)
     fecha_hora_de_inicio = models.DateTimeField()
     fecha_hora_de_fin = models.DateTimeField()
-    monto_de_cambio_entregado = models.FloatField()
     id_operador = models.ForeignKey(Operador, on_delete=models.CASCADE)
     numero_de_casilla = models.ForeignKey(CasillaDePeaje, on_delete=models.CASCADE)
-    plata_inicial = models.FloatField()
-    plata_final = models.FloatField()
     numero_de_estacion = models.ForeignKey(EstacionDePeaje, on_delete=models.CASCADE)
 
     def __str__(self):

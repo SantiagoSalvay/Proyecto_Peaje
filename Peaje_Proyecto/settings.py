@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'peaje_db1',
         'USER': 'root',
-        'PASSWORD': 'cordoba2022',
+        'PASSWORD': 'santigabi',
         'HOTS': 'localhost',
         'PORT': '3306',
     }
