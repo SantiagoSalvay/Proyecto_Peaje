@@ -8,8 +8,8 @@ django = "*"
 reportlab = "*"
 qrcode = "*"
 mysql = "*"
-mysqlclient = "*"
 pymysql = "*"
+mysqlclient = "==2.0.3"
 
 [dev-packages]
 
