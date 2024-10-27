@@ -8,6 +8,8 @@ from .handlers.casilla_handler import CasillaHandler
 from .handlers.turno_handler import GestionCobroHandler
 from .models import Operador
 from django.urls import reverse
+from django.contrib import messages
+
 
 class IndexView(View):
     def get(self, request):
@@ -18,11 +20,23 @@ class IndexView(View):
 
 class CargarOperadorView(View):
     def get(self, request):
-        operadores = Operador.objects.all()
+        operadores = OperadorHandler.get_operadores()
         return render(request, 'registro_trabajador.html', {'operadores': operadores})
 
     def post(self, request):
-        return OperadorHandler.registrar_operador(request)
+        dni = request.POST.get('operador_dni')
+        
+        if dni:  
+            try:
+                OperadorHandler.eliminar_operador(dni)
+                messages.success(request, "Operador eliminado exitosamente.")
+            except Exception as e:
+                messages.error(request, f"Error al eliminar el operador: {str(e)}")
+        else:
+            
+            return OperadorHandler.registrar_operador(request)
+
+        return redirect('cargar_operador')
 
 
 class CasillaView(View):
@@ -33,16 +47,16 @@ class CasillaView(View):
         return CasillaHandler.procesar_casilla(request)
 
 class ComienzaTurnoView(View):
-    def get(self, request):  # Ahora acepta `self` y `request`
-        # Renderiza el template
+    def get(self, request):  
+        
         return render(request, "comienza_turno.html")
 
-    def post(self, request):  # También acepta `self` y `request`
-        # Instancia el handler y llama a la función que guarda datos
+    def post(self, request):  
+        
         handler = GestionCobroHandler(request)
         handler.guardar_datos_cobro()
 
-        # Redirige a la siguiente vista o template según sea necesario
+        
         return redirect(reverse("cobro"))
 
 class DatoTurno(View):
