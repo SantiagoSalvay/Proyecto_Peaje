@@ -34,6 +34,7 @@ Para ejecutar el proyecto necesitarás instalar las siguientes dependencias:
 - **Django 5.1.1**: Django es el framework utilizado para desarrollar la aplicación.
 - **reportlab**: Librería utilizada para generar archivos PDF en Python.
 - **qrcode**: Librería para generar códigos QR.
+- **mysqlclient**: Librería que nos permite , por medio del archivo settings.py, conectarnos a la base de datos
 
 ### Pasos de instalación
 
